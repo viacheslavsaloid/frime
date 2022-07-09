@@ -18,7 +18,7 @@ export class TelAuthService {
     private readonly _messagesService: MessagesService,
   ) {}
 
-  async auth(body: ITelAuth) {
+  async sendCodeToPhone(body: ITelAuth) {
     try {
       const { tel } = body;
 
@@ -39,6 +39,7 @@ export class TelAuthService {
 
       return { JWT: this._jwtService.sign(userToReturn) };
     } catch (error) {
+      console.error(error);
       return error;
     }
   }

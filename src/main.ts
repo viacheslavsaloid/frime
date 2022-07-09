@@ -19,7 +19,7 @@ async function bootstrap() {
     `🚀 Application is running on: http://192.168.68.59:${3000}/${API}`,
   );
   console.log(
-    `🚀 Swagger is running on: http://192.168.68.59:${3000}/${SWAGGER}`,
+    `🚀 Swagger is running on: http://192.168.68.59:${3000}/${API}/${SWAGGER}`,
   );
 }
 

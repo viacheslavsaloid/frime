@@ -5,7 +5,7 @@ import { DISHES_ENTITIES } from '../../dishes';
 
 export const TYPEORM_CONFIG: TypeOrmModuleOptions = {
   type: 'postgres',
-  host: 'localhost',
+  host: 'api-database',
   port: 5432,
   username: 'postgres',
   password: 'postgres',

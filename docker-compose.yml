@@ -16,7 +16,7 @@ services:
       - api-database
     build:
       context: .
-      dockerfile: src/Dockerfile
+      dockerfile: ./Dockerfile
   api-database:
     image: postgres:latest
     container_name: api-database

@@ -1,6 +1,6 @@
 import type { INestApplication } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { SWAGGER } from 'src/shared';
+import { API, SWAGGER } from 'src/shared';
 import { USERS, UsersModule } from 'src/users';
 
 export function usersSwagger(app: INestApplication) {
@@ -8,5 +8,5 @@ export function usersSwagger(app: INestApplication) {
   const document = SwaggerModule.createDocument(app, config, {
     include: [UsersModule],
   });
-  SwaggerModule.setup(`${SWAGGER}/${USERS}`, app, document);
+  SwaggerModule.setup(`${API}/${SWAGGER}/${USERS}`, app, document);
 }

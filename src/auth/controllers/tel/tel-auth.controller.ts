@@ -10,6 +10,6 @@ export class TelAuthController {
 
   @Post(AUTH_ENDPOINTS.SEND_CODE_TO_PHONE)
   async sendCodeToPhone(@Body() body: TelAuthDto): Promise<IJwt> {
-    return this._telAuthService.auth(body);
+    return this._telAuthService.sendCodeToPhone(body);
   }
 }

@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 
 import { CryptoModule } from '../shared/crypto/crypto.module';
-import { MailsModule } from '../shared/mails/mails.module';
 import { MessagesModule } from '../shared/messages/messages.module';
 import { UsersModule } from '../users';
 import { JWT_CONFIG } from './configs';
@@ -16,7 +15,6 @@ import { AUTH_SUBSCRIBERS } from './subscribers';
   imports: [
     JwtModule.register(JWT_CONFIG),
     UsersModule,
-    MailsModule,
     MessagesModule,
     CryptoModule,
   ],

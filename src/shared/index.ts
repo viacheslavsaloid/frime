@@ -5,6 +5,5 @@ export * from './decorators';
 export * from './entities';
 export * from './enums';
 export * from './interfaces';
-export * from './mails';
 export * from './messages';
 export * from './utils';
