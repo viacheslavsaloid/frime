@@ -8,7 +8,6 @@ import { JWT_CONFIG } from './configs';
 import { AUTH_CONTROLLERS } from './controllers';
 import { AUTH_SERVICES } from './services';
 import { AUTH_STRATEGIES } from './strategies';
-import { AUTH_SUBSCRIBERS } from './subscribers';
 
 @Module({
   controllers: AUTH_CONTROLLERS,
@@ -18,7 +17,7 @@ import { AUTH_SUBSCRIBERS } from './subscribers';
     MessagesModule,
     CryptoModule,
   ],
-  providers: [...AUTH_SERVICES, ...AUTH_STRATEGIES, ...AUTH_SUBSCRIBERS],
+  providers: [...AUTH_SERVICES, ...AUTH_STRATEGIES],
   exports: AUTH_SERVICES,
 })
 export class AuthModule {}

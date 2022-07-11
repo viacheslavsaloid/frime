@@ -8,8 +8,13 @@ import { TelAuthService } from '../../services';
 export class TelAuthController {
   constructor(private readonly _telAuthService: TelAuthService) {}
 
-  @Post(AUTH_ENDPOINTS.SEND_CODE_TO_PHONE)
-  async sendCodeToPhone(@Body() body: TelAuthDto): Promise<IJwt> {
-    return this._telAuthService.sendCodeToPhone(body);
+  @Post(AUTH_ENDPOINTS.SIGN_IN_WITH_TEL)
+  async signInWithTel(@Body() body: TelAuthDto): Promise<IJwt> {
+    return this._telAuthService.signInWithTel(body);
+  }
+
+  @Post(AUTH_ENDPOINTS.SIGN_UP_WITH_TEL)
+  async signUpWithTel(@Body() body: TelAuthDto): Promise<IJwt> {
+    return this._telAuthService.signUpWithTel(body);
   }
 }

@@ -11,17 +11,8 @@ export class UserEntity extends BaseEntity implements IUser {
   @Column({ default: '' })
   name: string;
 
-  @Column({ unique: true, nullable: true })
-  email: string;
-
-  @Column({ unique: true, nullable: true })
-  googleId: string;
-
-  @Column('bigint', { unique: true, nullable: true })
-  telegramId: number;
-
-  @Column({ unique: true, nullable: true })
-  telegramToken: string;
+  @Column({ default: '' })
+  nikname: string;
 
   @Column({ unique: true, nullable: true })
   tel: string;
@@ -35,8 +26,4 @@ export class UserEntity extends BaseEntity implements IUser {
     default: UserStatusEnum.NOT_VERIFIED,
   })
   status: UserStatusEnum;
-
-  @Column({ default: '', nullable: true })
-  @Exclude({ toPlainOnly: true })
-  password: string;
 }
