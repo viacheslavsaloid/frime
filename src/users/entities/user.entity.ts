@@ -1,5 +1,6 @@
 import { Exclude } from 'class-transformer';
-import { Column, Entity } from 'typeorm';
+import { FileEntity, IFile } from 'src/files';
+import { Column, Entity, JoinColumn, OneToOne } from 'typeorm';
 
 import { BaseEntity } from '../../shared/entities';
 import { USERS } from '../constants';
@@ -26,4 +27,8 @@ export class UserEntity extends BaseEntity implements IUser {
     default: UserStatusEnum.NOT_VERIFIED,
   })
   status: UserStatusEnum;
+
+  @OneToOne(() => FileEntity, { cascade: true, eager: true })
+  @JoinColumn()
+  file: IFile;
 }

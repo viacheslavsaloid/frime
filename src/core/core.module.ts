@@ -6,6 +6,7 @@ import { AuthModule } from '../auth';
 import { CategoriesModule } from '../categories';
 import { TYPEORM_CONFIG } from './configs';
 import { UsersModule } from 'src/users';
+import { FilesModule } from 'src/files/files.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { UsersModule } from 'src/users';
     CategoriesModule,
     DishesModule,
     UsersModule,
+    FilesModule,
   ],
 })
 export class CoreModule {}
