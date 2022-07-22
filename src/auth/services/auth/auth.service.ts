@@ -38,6 +38,9 @@ export class AuthService {
   }
 
   async getMe(user: IUser): Promise<IJwt> {
-    return { JWT: this._jwtService.sign(await this.validate(user)) };
+    const _user = await this.validate(user);
+
+    console.log(_user);
+    return { JWT: this._jwtService.sign(_user) };
   }
 }
