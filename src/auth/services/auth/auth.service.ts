@@ -19,7 +19,6 @@ export class AuthService {
   }
 
   async verifyCode(user: IUser, body: IVerification): Promise<IJwt> {
-    console.log({ user, body });
     const isVerified = user?.verificationCode === body?.verificationCode;
 
     if (!isVerified) {
